@@ -13,4 +13,7 @@ jobs:
 workflows:
   load-tests:
     jobs:
-      - artillery
+      - artillery:
+        filters:
+          branches:
+            only: main
