@@ -1,0 +1,11 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: artilleryio/artillery:latest
+    steps:
+      - checkout
+      - run:
+          name: Execute load tests
+          command: /home/node/artillery/bin/artillery run tests/performance/socket-io.yml
